@@ -1,94 +1,66 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from '@/app/page.module.css'
+import Image from 'next/image';
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.container}>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <header className={styles.header}>
+
+        <Image
+        className={styles.logoImg}
+        src="/twitter-bird-logo.png.png"
+        alt="Logo site"
+        width={500}
+        height={120}
+        />
+
+        <input className={styles.search} type="text" placeholder="Pesquisar no Twitter" />
+      </header>
+
+      <main className={styles.main}>
+        <aside className={styles.sidebar}>
+          <nav>
+            <ul>
+              <li><span className={styles.iconHome} /> <span>Início</span></li>
+              <li><span className={styles.iconExplore} /> <span>Explorar</span></li>
+              <li><span className={styles.iconNotifications} /> <span>Notificações</span></li>
+              <li><span className={styles.iconMessages} /> <span>Mensagens</span></li>
+              <li><span className={styles.iconLists} /> <span>Listas</span></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div className={styles.feed}>
+          <div className={styles.tweetInput}>
+            <textarea placeholder="O que está acontecendo?" />
+            <button>Tweetar</button>
+          </div>
+
+          <div className={styles.tweet}>
+            <div className={styles.tweetHeader}>
+              <div className={styles.tweetInfo}>
+                <strong>Welker</strong>
+                <span>@welkerdelas</span>
+              </div>
+            </div>
+            <p>Este é um tweet simples!</p>
+          </div>
         </div>
+
+        <aside className={styles.trending}>
+          <h2>O que está acontecendo</h2>
+          <ul>
+            <li>#NextJS</li>
+            <li>#React</li>
+            <li>#SenacMG</li>
+          </ul>
+        </aside>
       </main>
+
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p>Feito por Vale :)</p>
       </footer>
     </div>
   );
